@@ -64,3 +64,13 @@ const shorties = myFilter(words, function(word) {
 const everyOtherWord = myFilter(words, function(word, i) {
 	return i % 2 === 0;
 });
+
+
+
+// map and filter
+
+const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+
+const checked = Array.from(allCheckboxes).filter(function(box){
+	return box.checked;
+})
