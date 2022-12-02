@@ -31,3 +31,28 @@ const todos = [
 const todoText = todos.map(function(todo){
     return todo.text;
 })
+
+
+const links = Array.from(document.querySelectorAll('a'));
+const urls = links.map(function(a) {
+    return a.href;
+})
+
+
+function myMap(arr, callBack) {
+    let newArr = [];
+    for(let i = 0; i < arr.length; i++) {
+    const val = callBack(arr[i], i, arr)
+    newArr.push(val)
+        
+    }
+    return newArr;
+}
+  
+const priorityMap = myMap(todos, function(todo){
+    return todo.priority;
+})
+
+const repeatedStrings = myMap(['a','b','c','d','e'], function(str, idx){
+    return str.repeat(idx)
+})
